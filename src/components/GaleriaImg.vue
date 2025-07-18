@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import type { Ref } from 'vue';
 import type { APIResponse } from '../interfaces/ApiResponse';
 
-defineProps<{
-    personajes: {
-        type: Ref<APIResponse[]>,
-        default: []
-    }
-}>()
+interface Props {
+    personajes: APIResponse[];
+}
+
+const { personajes } = defineProps<Props>()
 </script>
 <template>
     <div class="flex flex-wrap -mx-3 mb-5">

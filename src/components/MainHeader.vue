@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+// Emits
 const emit = defineEmits(['evento-gatos'])
 
-const numero = 0
+const numero = ref('')
 </script>
 <template>
     <nav class=" bg-white w-full flex relative justify-between items-center mx-auto px-8 h-20">
@@ -28,8 +30,8 @@ const numero = 0
             <div class="inline-block">
                 <div class="inline-flex items-center max-w-full">
                     <button class="flex items-center flex-grow-0 flex-shrink pl-2 relative w-60 border rounded-full px-1  py-1" type="button">
-                        <input v-model="numero" type="text" placeholder="Número de gatos" id="gatos" name="gatos">
-                        <div v-on:click="$emit('evento-gatos', numero)" class="flex items-center justify-center relative  h-8 w-8 rounded-full hover:bg-amber-900">
+                        <input v-model="numero" type="text" placeholder="Número de personajes" id="gatos" name="gatos">
+                        <div v-on:click="() => {$emit('evento-gatos', numero); numero=''}" class="flex items-center justify-center relative  h-8 w-8 rounded-full hover:bg-gray-400">
                             <svg
                                 viewBox="0 0 32 32"
                                 xmlns="http://www.w3.org/2000/svg"
