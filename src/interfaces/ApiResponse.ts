@@ -13,19 +13,23 @@ export interface APIResponse {
     created:  Date;
 }
 
-export enum Gender {
-    Female = "Female",
-    Male = "Male",
-    Unknown = "unknown",
+export const Gender = {
+    Female: "Female",
+    Male: "Male",
+    Unknown: "unknown",
 }
+
+type Gender = keyof typeof Gender
 
 export interface Location {
     name: string;
     url:  string;
 }
 
-export enum Status {
-    Alive = "Alive",
-    Dead = "Dead",
-    Unknown = "unknown",
-}
+export const Status = {
+    Alive: "Alive",
+    Dead: "Dead",
+    Unknown: "unknown",
+} as const;
+
+type Status = keyof typeof Status
